@@ -1,0 +1,11 @@
+<h1>All Locations</h1>
+
+<% @locations.each do |location| %>
+  <div class="media">
+    <div class="media-body">
+      <h4 class="media-heading">
+        <%= link_to location.name, location %>
+      </h4>
+    </div>
+  </div>
+<% end %>
