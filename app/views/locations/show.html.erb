@@ -2,9 +2,14 @@
 
 <div class="row">
   <div class="col-md-8">
-    <p><%= @location.address %></p>
+    <p><%= @location.address %></p></br>
+    <h2>Pick Ups</h2></br>
+    <% @pick_ups.each do |pu| %>
+      <p><%= link_to format_time(pu.time), location_pick_up_path(@location, pu) %></p>
+    <% end %>
   </div>
   <div class="col-md-4">
+    <%= link_to "Add Pick Up", new_location_pick_up_path(@location), class: 'btn btn-primary' %>
     <%= link_to "Edit Location", edit_location_path(@location), class: 'btn btn-success' %>
     <%= link_to "Delete Location", @location, method: :delete, class: 'btn btn-danger', data: {confirm: 'Are you sure you want to delete this location?'} %>
   </div>
