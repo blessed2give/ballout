@@ -26,23 +26,23 @@ ActiveRecord::Schema.define(version: 20170516163055) do
   add_index "locations", ["pickup_id"], name: "index_locations_on_pickup_id"
 
   create_table "pick_ups", force: :cascade do |t|
-    t.integer  "player_count"
+    t.integer  "player_count", default: 0
     t.datetime "time"
     t.integer  "location_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
   end
 
   add_index "pick_ups", ["location_id"], name: "index_pick_ups_on_location_id"
 
   create_table "pickup_users", force: :cascade do |t|
     t.integer  "user_id"
-    t.integer  "pickup_id"
+    t.integer  "pick_up_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  add_index "pickup_users", ["pickup_id"], name: "index_pickup_users_on_pickup_id"
+  add_index "pickup_users", ["pick_up_id"], name: "index_pickup_users_on_pick_up_id"
   add_index "pickup_users", ["user_id"], name: "index_pickup_users_on_user_id"
 
   create_table "users", force: :cascade do |t|
