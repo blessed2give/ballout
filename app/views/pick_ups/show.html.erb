@@ -1,0 +1,12 @@
+<h1><%= @location.name %></h1>
+
+<div class="row">
+  <div class="col-md-8">
+    <div class="media">
+      <div class="media-body">
+        Are you going to BALLOUT at <%= @location.name %> on <%= @pick_up.time %>?</br>
+        <%= link_to "Yes", pick_up_pickup_users_path(@pick_up, current_user), method: :post, class: 'btn btn-success' %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,11 +1,17 @@
 <h1>All Locations</h1>
 
 <% @locations.each do |location| %>
-  <div class="media">
-    <div class="media-body">
-      <h4 class="media-heading">
-        <%= link_to location.name, location %>
-      </h4>
+  <div class="row">
+    <div class="col-md-8">
+      <div class="media">
+        <div class="media-body">
+          <h4 class="media-heading">
+            <%= link_to location.name, location %>
+          </h4>
+        </div>
+      </div>
     </div>
+    <div class="col-md-4">
+      <%= link_to "Find New Location", new_location_path, class: 'btn btn-primary' %>
   </div>
 <% end %>

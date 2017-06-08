@@ -5,6 +5,7 @@ class LocationsController < ApplicationController
 
   def show
     @location = Location.find(params[:id])
+    @pick_ups = @location.pick_ups
   end
 
   def new
