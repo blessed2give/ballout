@@ -5,7 +5,7 @@ class CreateLocations < ActiveRecord::Migration
       t.string :address
       t.decimal :latitude
       t.decimal :longitude
-      t.references :pickup, index: true, foreign_key: true
+      t.references :pick_up, index: true, foreign_key: true
 
       t.timestamps null: false
     end
