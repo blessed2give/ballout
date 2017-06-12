@@ -18,12 +18,12 @@ ActiveRecord::Schema.define(version: 20170516163055) do
     t.string   "address"
     t.decimal  "latitude"
     t.decimal  "longitude"
-    t.integer  "pickup_id"
+    t.integer  "pick_up_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  add_index "locations", ["pickup_id"], name: "index_locations_on_pickup_id"
+  add_index "locations", ["pick_up_id"], name: "index_locations_on_pick_up_id"
 
   create_table "pick_ups", force: :cascade do |t|
     t.integer  "player_count", default: 0
