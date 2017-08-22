@@ -63,6 +63,9 @@ GEM
       warden (~> 1.2.3)
     erubis (2.7.0)
     execjs (2.7.0)
+    geocoder (1.4.4)
+    geocomplete_rails (1.7.0)
+      railties (>= 3.1)
     globalid (0.4.0)
       activesupport (>= 4.2.0)
     i18n (0.8.1)
@@ -169,6 +172,8 @@ DEPENDENCIES
   bootstrap_datetimepicker
   coffee-rails (~> 4.1.0)
   devise
+  geocoder
+  geocomplete_rails
   jquery-rails
   pg
   pry-rails

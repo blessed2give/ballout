@@ -12,9 +12,30 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require geocomplete
 //= require turbolinks
 //= require bootstrap
 //= require moment
 //= require bootstrap-datetimepicker
 //= require bootstrap_datetimepicker/dates
 //= require_tree .
+
+
+$(function() {
+  var options = {
+    map: "#map",
+    location: "Skokie, IL",
+    mapOptions: {
+      zoom: 10
+    },
+    markerOptions: {
+      draggable: true
+    },
+  };
+
+  $("#address").geocomplete(options);
+
+  $("#find").click(function() {
+    $("address").trigger("geocode")
+  });
+});
